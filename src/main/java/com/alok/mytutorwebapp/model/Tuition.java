@@ -19,6 +19,10 @@ public class Tuition {
     @ManyToMany(mappedBy = "tuitions")
     Set<Tutor> tutors    =   new HashSet<>();
 
+    public Tuition(){
+
+    }
+
     public Tuition(String tuitionSubject, String mode, String location) {
         this.tuitionSubject = tuitionSubject;
         this.mode = mode;

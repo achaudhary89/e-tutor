@@ -23,6 +23,10 @@ public class Tutor {
     @JoinTable(name = "tuition_tutor", joinColumns = @JoinColumn(name = "tutor_id"), inverseJoinColumns = @JoinColumn(name = "tuition_id"))
     private Set<Tuition> tuitions =   new HashSet<>();
 
+    public Tutor(){
+
+    }
+
     public Tutor(String firstName, String lastName, String mobileNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;

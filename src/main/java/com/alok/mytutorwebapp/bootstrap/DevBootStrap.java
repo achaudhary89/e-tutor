@@ -33,8 +33,8 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
 
         tutorRepository.save(tutor);
         tuitionRepository.save(tuition);
-/*
-        Tutor alok = new Tutor("ALOK123" , "chaudhary11", "99999999","test@gmail.com");
+
+      /*  Tutor alok = new Tutor("ALOK123" , "chaudhary11", "99999999","test@gmail.com");
         Tuition java = new Tuition("java", "online","anywhere");
         Tuition sql = new Tuition("sql", "online","anywhere");
         alok.getTuitions().add(java);
