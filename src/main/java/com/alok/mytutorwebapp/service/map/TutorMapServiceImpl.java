@@ -2,9 +2,10 @@ package com.alok.mytutorwebapp.service.map;
 
 import com.alok.mytutorwebapp.model.Tutor;
 import com.alok.mytutorwebapp.service.TutorService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class TutorMapServiceImpl extends AbstractMapService<Tutor, Long> implements TutorService {
 
     @Override

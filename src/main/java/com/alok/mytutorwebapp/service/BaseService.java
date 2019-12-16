@@ -1,7 +1,10 @@
 package com.alok.mytutorwebapp.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
+@Service
 public interface BaseService<T, ID> {
 
     public Set<T> findAll();

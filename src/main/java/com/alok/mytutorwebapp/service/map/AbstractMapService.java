@@ -1,10 +1,13 @@
 package com.alok.mytutorwebapp.service.map;
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+@Service
 public abstract class AbstractMapService<T, ID> {
 
     public Map<ID, T> map = new HashMap<>();
