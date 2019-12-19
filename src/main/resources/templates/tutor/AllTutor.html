@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
 <body>
-$END$
+
+<h2>Tutors</h2>
+
+<table id="tutors" class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">FirstName</th>
+        <th style="width: 150px;">LastName</th>
+        <th style="width: 200px;">email</th>
+        <th style="width: 120px">Mobile</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tutor : ${allTutors}">
+        <td th:text="${tutor.firstName}"/>
+        <td th:text="${tutor.lastName}"/>
+        <td th:text="${tutor.email}"/>
+        <td th:text="${tutor.mobileNumber}"/>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
