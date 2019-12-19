@@ -31,10 +31,10 @@ public class DataLoader implements CommandLineRunner {
 
         Tutor tutor2    =   new Tutor();
         tutor2.setId(3l);
-        tutor1.setFirstName("nolan");
-        tutor1.setLastName("christopher");
-        tutor1.setEmail("nolan@gmail.com");
-        tutor1.setMobileNumber("74747474");
+        tutor2.setFirstName("nolan");
+        tutor2.setLastName("christopher");
+        tutor2.setEmail("nolan@gmail.com");
+        tutor2.setMobileNumber("74747474");
 
         tutorService.save(tutor2);
 
