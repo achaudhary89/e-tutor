@@ -21,7 +21,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Tutor tutor1    =   new Tutor();
-        tutor1.setId(2l);
+        //tutor1.setId(2l);
         tutor1.setFirstName("rohan");
         tutor1.setLastName("Singh");
         tutor1.setEmail("rohan@gmail.com");
@@ -30,7 +30,7 @@ public class DataLoader implements CommandLineRunner {
         tutorService.save(tutor1);
 
         Tutor tutor2    =   new Tutor();
-        tutor2.setId(3l);
+        //tutor2.setId(3l);
         tutor2.setFirstName("nolan");
         tutor2.setLastName("christopher");
         tutor2.setEmail("nolan@gmail.com");

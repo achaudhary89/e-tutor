@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RateLimitingInterceptor implements HandlerInterceptor {
     Map<String, Optional<SimpleRateLimitor>> limitorMap =   new ConcurrentHashMap<>();
-    @Override
+   /* @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
             String url  =   request.getRequestURI();
             SimpleRateLimitor rateLimitor   =   getSimpleRateLimitorForRequest(url);
@@ -31,7 +31,7 @@ public class RateLimitingInterceptor implements HandlerInterceptor {
 
 
         return allow;
-    }
+    }*/
 
     private  SimpleRateLimitor getSimpleRateLimitorForRequest(String url) {
         if(limitorMap.containsKey(url)){
@@ -41,7 +41,7 @@ public class RateLimitingInterceptor implements HandlerInterceptor {
                 if(limitorMap.containsKey(url)){
                     return limitorMap.get(url).get();
                 }
-                SimpleRateLimitor rateLimitor   =   SimpleRateLimitor.create(TimeUnit.MINUTES, 5);
+                SimpleRateLimitor rateLimitor   =   SimpleRateLimitor.create(TimeUnit.MINUTES, 30);
                 limitorMap.put(url, Optional.of(rateLimitor));
                 return rateLimitor;
             }

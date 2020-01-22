@@ -1,15 +1,18 @@
 package com.alok.mytutorwebapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Tutor {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
+public class Tutor extends BaseEntity {
 
     private String firstName;
 
@@ -19,12 +22,12 @@ public class Tutor {
 
     private String email;
 
+
     @ManyToMany
     @JoinTable(name = "tuition_tutor", joinColumns = @JoinColumn(name = "tutor_id"), inverseJoinColumns = @JoinColumn(name = "tuition_id"))
     private Set<Tuition> tuitions =   new HashSet<>();
 
-    public Tutor(){
-
+    public Tutor() {
     }
 
     public Tutor(String firstName, String lastName, String mobileNumber, String email) {
@@ -34,21 +37,7 @@ public class Tutor {
         this.email = email;
     }
 
-    public Tutor(String firstName, String lastName, String mobileNumber, String email, Set<Tuition> tuitions) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
-        this.tuitions = tuitions;
-    }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -89,4 +78,6 @@ public class Tutor {
     public void setTuitions(Set<Tuition> tuitions) {
         this.tuitions = tuitions;
     }
+
+
 }

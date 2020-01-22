@@ -1,5 +1,6 @@
 package com.alok.mytutorwebapp.service.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Service
+@Profile("map")
 public abstract class AbstractMapService<T, ID> {
 
     public Map<ID, T> map = new HashMap<>();
